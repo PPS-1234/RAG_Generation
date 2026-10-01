@@ -1,0 +1,9 @@
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ragforge_store/
+.env
+*.egg-info/
+.ragforge_store/
+.ragforge_sources/
