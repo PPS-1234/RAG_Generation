@@ -1,0 +1,1 @@
+{"kubernetes":[{"question":"What is the difference between liveness and readiness probes?","expected":"probe behavior"},{"question":"What grind size should I use for pour-over coffee?","expected":"REFUSE"}],"coffee":[{"question":"What water temperature should I use?","expected":"coffee"},{"question":"What does a Kubernetes Deployment do?","expected":"REFUSE"}]}
