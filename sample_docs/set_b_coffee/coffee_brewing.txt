@@ -1,0 +1,13 @@
+A Guide to Pour-Over Coffee Brewing
+
+Pour-over is a manual brewing method where hot water is poured over ground coffee sitting in a filter, and the brewed coffee drips through into a vessel below.
+
+The recommended water-to-coffee ratio for pour-over is typically between 15:1 and 17:1 by weight. For a standard 300 gram cup of coffee, this means using roughly 18 to 20 grams of coffee.
+
+Water temperature matters a great deal. Water that is too hot, above 96 degrees Celsius, can over-extract the coffee and produce a bitter taste. Water that is too cool, below 90 degrees Celsius, under-extracts and produces a sour, weak cup.
+
+Grind size should be medium-fine for pour-over, similar in texture to coarse sand. A grind that is too fine will clog the filter and slow the flow rate dramatically, leading to over-extraction. A grind that is too coarse will let water pass through too quickly, under-extracting the grounds.
+
+The brewing process usually starts with a "bloom," where a small amount of hot water, about twice the weight of the coffee grounds, is poured over the grounds and allowed to sit for 30 to 45 seconds. This lets trapped carbon dioxide escape and leads to more even extraction during the main pour.
+
+Total brew time for a standard pour-over is typically between 2.5 and 3.5 minutes from the first pour to the last drip.
