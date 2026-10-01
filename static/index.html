@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>RAGForge Generator</title>
+<style>body{font-family:system-ui;max-width:920px;margin:32px auto;padding:0 20px}input,button,textarea{font:inherit;padding:10px;margin:5px 0}textarea{width:100%;min-height:110px}.card{border:1px solid #ddd;border-radius:12px;padding:18px;margin:15px 0}pre{white-space:pre-wrap;background:#f7f7f7;padding:12px;border-radius:8px}.muted{color:#666}</style></head>
+<body><h1>RAGForge</h1><p class="muted">Runtime ingestion → query planning → retrieval → reranking → grounding → cited answer.</p>
+<div class="card"><h2>1. Build a collection</h2><input id="c" value="demo" placeholder="collection id"><input id="f" type="file" accept=".pdf,.docx,.txt,.md,.csv"><button onclick="upload()">Upload & Index</button><pre id="u"></pre></div>
+<div class="card"><h2>2. Ask</h2><textarea id="q" placeholder="Ask a question about the uploaded documents"></textarea><button onclick="ask()">Ask</button><h3>Answer</h3><pre id="a"></pre><h3>Agent / grounding</h3><pre id="g"></pre><h3>Sources</h3><pre id="s"></pre></div>
+<script>
+async function upload(){const c=document.getElementById('c').value.trim(),f=document.getElementById('f').files[0];if(!f)return alert('Choose a file');const d=new FormData();d.append('file',f);const r=await fetch('/api/v1/collections/'+encodeURIComponent(c)+'/documents',{method:'POST',body:d});document.getElementById('u').textContent=JSON.stringify(await r.json(),null,2)}
+async function ask(){const c=document.getElementById('c').value.trim(),q=document.getElementById('q').value.trim();const r=await fetch('/api/v1/collections/'+encodeURIComponent(c)+'/query',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question:q})});const d=await r.json();document.getElementById('a').textContent=d.answer||JSON.stringify(d,null,2);document.getElementById('g').textContent=JSON.stringify({agent:d.agent,grounding:d.grounding},null,2);document.getElementById('s').textContent=JSON.stringify(d.sources||[],null,2)}
+</script></body></html>
