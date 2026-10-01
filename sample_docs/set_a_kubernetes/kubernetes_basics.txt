@@ -1,0 +1,15 @@
+Kubernetes Architecture Overview
+
+Kubernetes is a container orchestration system. It manages a cluster made up of a control plane and worker nodes.
+
+The control plane makes global decisions about the cluster, such as scheduling. It consists of the API server, etcd, the scheduler, and the controller manager. The API server is the front end of the control plane, and all communication with the cluster goes through it.
+
+Worker nodes run the actual application workloads. Each node runs a kubelet, which is an agent that ensures containers are running in a pod as expected. Nodes also run kube-proxy, which maintains network rules.
+
+A Pod is the smallest deployable unit in Kubernetes. It represents one or more containers that share storage and network resources.
+
+Liveness probes tell Kubernetes when to restart a container. Readiness probes tell Kubernetes when a container is able to accept traffic. These are different signals: a container can be alive but not yet ready to serve requests, for example while it is still loading a large model into memory.
+
+A Deployment manages a set of identical Pods and handles rolling updates, so you can update an application version without downtime. A Service provides a stable network identity for a set of Pods, since individual Pod IP addresses change as Pods are created and destroyed.
+
+Horizontal Pod Autoscaling automatically scales the number of Pod replicas based on observed metrics such as CPU utilization or custom metrics like queue depth.
